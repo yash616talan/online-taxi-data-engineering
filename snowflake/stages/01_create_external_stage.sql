@@ -1,4 +1,5 @@
 USE DATABASE TAXI_DW;
+USE SCHEMA RAW;
 
 CREATE STAGE IF NOT EXISTS TAXI_S3_STAGE
     URL = 's3://online-taxi-data-yash/'
