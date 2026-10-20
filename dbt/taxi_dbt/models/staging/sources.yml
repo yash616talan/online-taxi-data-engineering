@@ -1,0 +1,42 @@
+version: 2
+
+sources:
+
+  - name: raw
+    database: TAXI_DW
+    schema: RAW
+
+    tables:
+
+      - name: riders_raw
+        description: "Raw rider records ingested from the source system."
+
+      - name: drivers_raw
+        description: "Raw driver records ingested from the source system."
+
+      - name: vehicles_raw
+        description: "Raw vehicle records ingested from the source system."
+
+      - name: driver_vehicle_assignments_raw
+        description: "Raw driver-to-vehicle assignment records."
+
+      - name: locations_raw
+        description: "Raw geographic and operational location records."
+
+      - name: promotions_raw
+        description: "Raw promotion and discount definitions."
+
+      - name: trips_raw
+        description: "Raw ride/trip transaction records."
+
+      - name: trip_events_raw
+        description: "Raw trip lifecycle events."
+
+      - name: payments_raw
+        description: "Raw rider payment attempts and payment status records."
+
+      - name: ratings_raw
+        description: "Raw rider and driver rating records."
+
+      - name: driver_earnings_raw
+        description: "Raw driver earning and payout records."

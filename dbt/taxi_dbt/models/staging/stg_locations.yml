@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: stg_locations
+    description: >
+      Standardized and deduplicated location reference data.
+
+    columns:
+
+      - name: location_id
+        description: Unique identifier for the location.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: city
+        description: City associated with the location.
+        data_tests:
+          - not_null
+
+      - name: state
+        description: State associated with the location.
+        data_tests:
+          - not_null
+
+      - name: country
+        description: Country associated with the location.
+        data_tests:
+          - not_null
+
+      - name: latitude
+        description: Geographic latitude.
+        data_tests:
+          - not_null
+
+      - name: longitude
+        description: Geographic longitude.
+        data_tests:
+          - not_null
+
+      - name: location_type
+        description: Business classification of the location.
+        data_tests:
+          - not_null

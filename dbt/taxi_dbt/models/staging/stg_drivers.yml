@@ -1,0 +1,73 @@
+version: 2
+
+models:
+  - name: stg_drivers
+    description: >
+      Standardized and deduplicated driver records from the RAW layer.
+      When multiple source versions exist for a driver, the latest version
+      based on updated_at and ingestion metadata is retained.
+
+    columns:
+
+      - name: driver_id
+        description: Unique identifier for the driver.
+        data_tests:
+          - not_null
+
+      - name: first_name
+        description: Driver first name.
+        data_tests:
+          - not_null
+
+      - name: last_name
+        description: Driver last name.
+        data_tests:
+          - not_null
+
+      - name: email
+        description: Standardized driver email address.
+        data_tests:
+          - not_null
+
+      - name: license_number
+        description: Driver license number.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: license_expiry_date
+        description: Driver license expiry date.
+        data_tests:
+          - not_null
+
+      - name: joining_date
+        description: Date the driver joined the platform.
+        data_tests:
+          - not_null
+
+      - name: driver_status
+        description: Current driver status.
+        data_tests:
+          - not_null
+
+      - name: driver_tier
+        description: Current driver tier.
+        data_tests:
+          - not_null
+
+      - name: created_at
+        description: Timestamp when the driver record was created.
+        data_tests:
+          - not_null
+
+      - name: updated_at
+        description: Timestamp of the latest source update.
+        data_tests:
+          - not_null
+
+      - name: record_hash
+        description: >
+          Hash of the driver business attributes used to detect
+          business-level changes between source versions.
+        data_tests:
+          - not_null

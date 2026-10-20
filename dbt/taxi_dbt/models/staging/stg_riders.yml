@@ -1,0 +1,43 @@
+version: 2
+
+models:
+
+  - name: stg_riders
+    description: >
+      Standardized rider source records. Multiple versions of the same
+      rider are intentionally retained to support downstream change
+      detection and SCD Type 2 processing.
+
+    columns:
+
+      - name: rider_id
+        description: Business identifier for the rider.
+        data_tests:
+          - not_null
+
+      - name: email
+        description: Standardized rider email address.
+        data_tests:
+          - not_null
+
+      - name: signup_date
+        description: Rider signup date.
+        data_tests:
+          - not_null
+
+      - name: rider_status
+        description: Rider status from the source.
+        data_tests:
+          - not_null
+
+      - name: updated_at
+        description: Timestamp of the source version.
+        data_tests:
+          - not_null
+
+      - name: record_hash
+        description: >
+          Hash of the rider business attributes used to detect
+          business-level changes between source versions.
+        data_tests:
+          - not_null
